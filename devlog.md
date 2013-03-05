@@ -9,4 +9,8 @@ Development Log
 
     RubyMine tells me this codes smells badly. This is the way to do it though.
 
-2.
+2.  RubyMine did not load the gems needed to inspect the Rhodes code. Therefore, I added a Gemfile to the root of the
+    project. This is not necessary because we installed rhodes globally, but it helps RubyMine to determine the needed
+    gems.
+
+3.

@@ -7,3 +7,5 @@ sim-*
 bin/
 
 .idea/*
+
+/Gemfile.lock
