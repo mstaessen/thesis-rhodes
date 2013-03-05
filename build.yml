@@ -1,0 +1,24 @@
+#sdk: "/usr/local/Cellar/ruby/1.9.3-p392/lib/ruby/gems/1.9.1/gems/rhodes-3.5.1.12"
+sdkversion: 3.5.0
+name: thesis-rhodes
+version: 1.0
+vendor: rhomobile
+build: debug
+bbver: 4.6
+applog: rholog.txt
+iphone:
+  configuration: Release
+  sdk: iphonesimulator5.0
+  provisionprofile:
+  codesignidentity:
+  entitlements:
+  BundleIdentifier: com.rhomobile.thesis-rhodes
+  BundleURLScheme: thesis-rhodes
+wp:
+  productid: '246dc830-67bc-0130-4eff-406c8f50c6bf'
+symbian:
+  uid: '0xe1fe4fc2'
+android:
+  version: 2.1
+
+extensions: ["json", "another-extension"]
