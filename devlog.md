@@ -17,6 +17,8 @@ Development Log
     - You need to make your rhodes install (in your system gems) point to you app and
       then generate the Xcode project. You can then open an Xcode project and run your app from there, or
     - You can build the release version from command line. This will create a *.ipa file in bin/target/iOS.
+      This is the most useful if there is some kind of command line utility that copies apps to iDevices.
+      [Fruitstrap](https://github.com/ghughes/fruitstrap) could work but is unmaintained.
       Make sure you have correct settings in build.yml (this is an example):
 
         name: JS App
@@ -32,4 +34,4 @@ Development Log
           BundleIdentifier: com.johnsmithcompany.jsapp
           BundleURLScheme: jsapp
 
-
+4.
