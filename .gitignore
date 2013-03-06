@@ -12,3 +12,5 @@ Gemfile.lock
 # IDE settings
 .idea/*
 
+# Sensitive Project Settings
+build.yml
