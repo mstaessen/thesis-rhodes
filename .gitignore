@@ -6,6 +6,9 @@ sim-*
 # build output
 bin/
 
+# Lockfile
+Gemfile.lock
+
+# IDE settings
 .idea/*
 
-/Gemfile.lock

@@ -13,4 +13,23 @@ Development Log
     project. This is not necessary because we installed rhodes globally, but it helps RubyMine to determine the needed
     gems.
 
-3.
+3.  Running on the iPhone is tricky and there are 2 ways:
+    - You need to make your rhodes install (in your system gems) point to you app and
+      then generate the Xcode project. You can then open an Xcode project and run your app from there, or
+    - You can build the release version from command line. This will create a *.ipa file in bin/target/iOS.
+      Make sure you have correct settings in build.yml (this is an example):
+
+        name: JS App
+        version: 1.0
+        iphone:
+          provisionprofile: E5931D39-CA68-48E4-A3AF-BB538E1C8CE6
+          sdk: iphoneos4.2
+          codesignidentity: "iPhone Developer: John Smith (MF99RW67WY)"
+          entitlements: ""
+          configuration: Release
+          emulator: 4.2
+          emulatortarget: ipad
+          BundleIdentifier: com.johnsmithcompany.jsapp
+          BundleURLScheme: jsapp
+
+

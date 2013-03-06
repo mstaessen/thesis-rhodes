@@ -78,14 +78,7 @@
     <% end %>
 </head>
 
-<body
-<% if is_bb6 %>
-data-do-fix-forms="true"
-<% elsif System::get_property('platform') == 'WP7' %>
-onload="wp7_change_forms_action_to_get()"
-<% end %>
-data-platform="<%= System::get_property('platform') %>"
->
+<body <% if is_bb6 %>data-do-fix-forms="true"<% elsif System::get_property('platform') == 'WP7' %>onload="wp7_change_forms_action_to_get()"<% end %> data-platform="<%= System::get_property('platform') %>">
 <%= @content %>
 </body>
 
