@@ -6,6 +6,9 @@ sim-*
 # build output
 bin/
 
+# Simulator files
+rhosimulator/*
+
 # Lockfile
 Gemfile.lock
 

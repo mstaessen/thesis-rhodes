@@ -34,4 +34,9 @@ Development Log
           BundleIdentifier: com.johnsmithcompany.jsapp
           BundleURLScheme: jsapp
 
-4.
+4.  Be careful when symlinking assets. ```rake run(:.*)?``` copies the symlinks instead of symlinking to them and as a
+    result relative symlinks get broken... Use absolute symlinks or use some kind of asset management tool?
+    Opened an issue (https://github.com/rhomobile/rhodes/issues/137) for this and their answer is they don't support
+    symlinks. As a quickfix, I added my bootstrap submodule in public instead of symlinking it...
+
+5.
