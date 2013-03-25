@@ -39,4 +39,40 @@ Development Log
     Opened an issue (https://github.com/rhomobile/rhodes/issues/137) for this and their answer is they don't support
     symlinks. As a quickfix, I added my bootstrap submodule in public instead of symlinking it...
 
-5.
+5.  The simulator is not capable of testing responsiveness because the size of the window does not get set.
+
+6.  The URL scheme appears to be:
+
+        /{application}[/{model}[/{id}]]/{action}[?{query}][#{fragment}]
+
+7.  When camera capability is listed, the (front-facing) camera turns on for a while on boot.
+
+8.  Rhodes feels very cumbersome. Also, development seems to have slowed down since 3.4... Before that, there
+    was a minor release (x.y) every 2-3 months. Seems suspicious
+
+9.  ```full-screen``` in rhoconfig.txt apparently opens the simulator in full screen, does not change a thing on the
+    device. The ```local_server_port``` does not seem to work either (using the simulator)
+
+10. The params hash is a simple hash. The request hash looks something like this
+
+    ```ruby
+    {
+        "application" => "app",
+        "model" => "index.erb",
+        "request-method" => "GET",
+        "request-uri" => "/app/index.erb",
+        "request-query" => "",
+        "headers" => {
+            "User-Agent" => "Mozilla/5.0 (Macintosh; PPC Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) RhoSimulator Safari/534.34",
+            "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Connection" => "Keep-Alive",
+            "Accept-Encoding" => "gzip",
+            "Accept-Language" => "nl-BE,en,*",
+            "Host" => "127.0.0.1:59351"
+        }
+    }
+    ```
+
+11. The logic used to find the controller is located in ```rhoapplication.rb```
+
+12.
