@@ -1,18 +1,15 @@
 <div class="row">
     <div class="span4 offset4">
         <div class="margin10">
-            <form class="form" action="<%= url_for :action => :do_login %>">
+            <form class="form" method="post" action="<%= url_for :action => :do_login %>">
                 <h2 class="text-center">Please sign in</h2>
 
-                <% @flashes.each do |flash| %>
-                    <div class="alert alert-<%= flash[:type] %>">
-                        <button type="button" class="close">×</button>
-                        <%= flash[:msg] %>
-                    </div>
-                <% end %>
+                <%= render_flashes %>
 
-                <input type="email" class="input-block-level" placeholder="Email address" autofocus="autofocus" required="required"/>
-                <input type="password" class="input-block-level" placeholder="Password" required="required"/>
+                <input type="email" name="email" id="email" class="input-block-level" placeholder="Email address"
+                       autofocus="autofocus" required="required" value="michiel.staessen@student.kuleuven.be" />
+                <input type="password" name="password" id="password" class="input-block-level" placeholder="Password"
+                       required="required" value="test123" />
                 <button type="submit" class="btn btn-large btn-primary btn-block">Sign in</button>
             </form>
         </div>

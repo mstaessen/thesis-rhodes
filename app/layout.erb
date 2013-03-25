@@ -30,17 +30,19 @@
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="pull-left">
-                    <a class="brand" href="<%= url_for :model => :identity, :action => :login %>">Expense App</a>
+                    <a class="brand" href="<%= url_for :model => :Default, :action => :index %>">Expense App</a>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-danger"><i class="icon icon-white icon-lock"></i></a>
+                    <% if has_identity? %>
+                        <a class="btn btn-danger" href="<%= url_for :model => :Auth, :action => :do_logout %>"><i class="icon icon-white icon-lock"></i></a>
+                    <% end %>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div id="content" class="container-fluid">
+<div id="content" class="container">
     <%= @content %>
 </div>
 

@@ -4,15 +4,12 @@
             <form class="form">
                 <h2 class="text-center">Please sign in</h2>
 
-                <% @flashes.each do |flash| %>
-                    <div class="alert alert-<%= flash[:type] %>">
-                        <button type="button" class="close">×</button>
-                        <%= flash[:msg] %>
-                    </div>
-                <% end %>
+                <%= render_flashes({ :type => 'info', :msg => 'Logging in...' }) %>
 
-                <input type="email" class="input-block-level" placeholder="Email address" autofocus="autofocus" required="required" disabled="disabled"/>
-                <input type="password" class="input-block-level" placeholder="Password" required="required" disabled="disabled"/>
+                <input type="email" name="email" id="email" class="input-block-level" placeholder="Email address"
+                       autofocus="autofocus" required="required" value="<%= @params['email'] %>" disabled="disabled" />
+                <input type="password" name="password" id="password" class="input-block-level" placeholder="Password"
+                       required="required" value="<%= @params['password'] %>" disabled="disabled"/>
                 <button type="submit" class="btn btn-large btn-primary btn-block" disabled="disabled">Sign in</button>
             </form>
         </div>

@@ -1,15 +1,11 @@
-class DefaultController < Rho::RhoController
-    include BrowserHelper
+require 'helpers/action_helper'
 
-    def pre_dispatch(req, res)
-        super
-        @child = true
-    end
+class DefaultController < Rho::RhoController
+    include ActionHelper
 
     def index
+        check_auth
 
-
-        render :action => :index
     end
 
 end

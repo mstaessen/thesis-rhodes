@@ -1,4 +1,5 @@
 class AppApplication < Rho::RhoApplication
+
     def initialize
         @identity = nil
         @flashes = []
@@ -9,13 +10,35 @@ class AppApplication < Rho::RhoApplication
         super
     end
 
+    # Identity
+
     def has_identity?
-        return !@identity.nil?
+        !@identity.nil?
+    end
+
+    def get_identity_token
+        @identity['token']
+    end
+
+    def set_identity_token(token)
+        @identity = { 'token' => token }
     end
 
     def get_identity
-        return @identity
+        @identity
     end
+
+    def set_identity(identity)
+        @identity.merge!(identity)
+    end
+
+    def clear_identity
+        @identity = nil
+    end
+
+    # End Identity
+
+    # Flash Messages
 
     def has_flashes?
         return @flashes.length != 0
@@ -32,4 +55,6 @@ class AppApplication < Rho::RhoApplication
         # "concatenates" the elements to the end of the array
         @flashes << flash
     end
+
+    # End Flash Messages
 end

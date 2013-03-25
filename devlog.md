@@ -77,4 +77,13 @@ Development Log
 
 11. The logic used to find the controller is located in ```rhoapplication.rb```
 
-12.
+12. Het pad voor ```require``` is relatief tov de app en niet tov de huidige controller.
+
+13. Responses with ```Content-Type: application/json``` and ```Content-Type: application/xml``` get parsed automatically
+    if the extensions are loaded (json, rexml)
+
+14. The ```rake``` tasks for Android are a complete mess. Comment out ALL ```adb start-server``` lines (adb will start
+    the server by itself if needed) and also disable all appends of logcat to rholog.txt. Logging is way more easy if
+    you use a terminal window running the command ```adb logcat | grep APP```
+
+15.
