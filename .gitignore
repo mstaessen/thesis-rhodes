@@ -17,3 +17,5 @@ Gemfile.lock
 
 # Sensitive Project Settings
 build.yml
+
+/.project
