@@ -5,7 +5,9 @@ Development Log
     iPhone it conflicts with design guidelines.
     You can disable this toolbar in app/application.erb.
 
-        @@toolbar = nil
+    ```ruby
+    @@toolbar = nil
+    ```
 
     RubyMine tells me this codes smells badly. This is the way to do it though.
 
