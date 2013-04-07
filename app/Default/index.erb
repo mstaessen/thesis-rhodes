@@ -1,13 +1,17 @@
-<div class="row">
-    <div class="span10 offset1">
-        <%= render_flashes %>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="margin10">
+            <%= render_flashes %>
+        </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="span4 offset4">
-        <p class="text-center">I want to:</p>
-        <a class="btn btn-large btn-block btn-primary" href="<%= url_for :model => :Wizard, :action => :index %>">Create New Expense</a>
-        <a class="btn btn-large btn-block btn-primary" href="<%= url_for :model => :History, :action => :index %>">View My Expenses</a>
+<div class="row-fluid">
+    <div class="span4 offset4 reflow-phone">
+        <div class="margin10">
+            <p class="text-center">I want to:</p>
+            <a class="btn btn-large btn-block btn-primary" href="<%= url_for :model => :Wizard, :action => :index %>">Create New Expense</a>
+            <a class="btn btn-large btn-block btn-primary" href="<%= url_for :model => :History, :action => :index %>">View My Expenses</a>
+        </div>
     </div>
 </div>

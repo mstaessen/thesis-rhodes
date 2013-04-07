@@ -1,8 +1,8 @@
 class AppApplication < Rho::RhoApplication
 
     def initialize
-        @identity = nil
         @flashes = []
+        @session = {}
 
         @tabs = nil
         @@toolbar = nil
@@ -10,30 +10,49 @@ class AppApplication < Rho::RhoApplication
         super
     end
 
+    def on_deactivate_app
+        # TODO: Serialize session data
+    end
+
+    def on_activate_app
+        # TODO: Unserialize session data
+    end
+
+    def get_session(namespace)
+        @session[namespace]
+    end
+
+    def set_session(namespace, value)
+        @session[namespace] = value
+    end
+
     # Identity
 
     def has_identity?
-        !@identity.nil?
+        !get_identity.empty?
     end
 
     def get_identity_token
-        @identity['token']
+        get_identity['token']
     end
 
     def set_identity_token(token)
-        @identity = { 'token' => token }
+        get_identity['token'] = token
     end
 
     def get_identity
-        @identity
+        if @session[:identity].nil?
+            @session[:identity] = {}
+        end
+        @session[:identity]
     end
 
     def set_identity(identity)
-        @identity.merge!(identity)
+        @session[:identity] = identity
     end
 
     def clear_identity
-        @identity = nil
+        @session.delete(:identity)
     end
 
     # End Identity
@@ -41,14 +60,14 @@ class AppApplication < Rho::RhoApplication
     # Flash Messages
 
     def has_flashes?
-        return @flashes.length != 0
+        @flashes.length != 0
     end
 
     # Fetching the flash messages will clear the list to make sure no flash massages are left behind.
     def get_flashes
         flashes = @flashes
         @flashes = []
-        return flashes
+        flashes
     end
 
     def add_flash(flash)

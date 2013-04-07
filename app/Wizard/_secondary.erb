@@ -1,0 +1,16 @@
+<nav class="margin10">
+    <ul class="nav nav-tabs nav-stacked">
+        <li <%= 'class="active"' if @request['request-uri'] == (url_for :action => :info) %>>
+            <a href="<%= url_for :action => :info %>"><i class="icon-chevron-right pull-right"></i> 1. Info</a>
+        </li>
+        <li <%= 'class="active"' if @request['request-uri'] == (url_for :action => :overview) %>>
+            <a href="<%= url_for :action => :overview %>"><i class="icon-chevron-right pull-right"></i> 2. Overview</a>
+        </li>
+        <li <%= 'class="active"' if @request['request-uri'] == (url_for :action => :add) %>>
+            <a href="<%= url_for :action => :add %>"><i class="icon-chevron-right pull-right"></i> 3. Add Expense</a>
+        </li>
+        <li <%= 'class="active"' if @request['request-uri'] == (url_for :action => :sign) %>>
+            <a href="<%= url_for :action => :sign %>"><i class="icon-chevron-right pull-right"></i> 4. Sign &amp; Send</a>
+        </li>
+    </ul>
+</nav>

@@ -1,16 +1,17 @@
-<div class="row">
-    <div class="span4 offset4">
+<div class="row-fluid">
+    <div class="span4 offset4 reflow-phone">
         <div class="margin10">
             <form class="form">
                 <h2 class="text-center">Please sign in</h2>
 
-                <%= render_flashes({ :type => 'info', :msg => 'Logging in...' }) %>
+                <%= render_flashes({:type => 'info', :msg => 'Logging in...'}) %>
 
                 <input type="email" name="email" id="email" class="input-block-level" placeholder="Email address"
-                       autofocus="autofocus" required="required" value="<%= @params['email'] %>" disabled="disabled" />
+                       autofocus="autofocus" required="required" value="<%= @params['email'] %>" disabled="disabled"/>
                 <input type="password" name="password" id="password" class="input-block-level" placeholder="Password"
                        required="required" value="<%= @params['password'] %>" disabled="disabled"/>
-                <button type="submit" class="btn btn-large btn-primary btn-block" disabled="disabled">Sign in</button>
+                <button type="submit" class="btn btn-large btn-primary btn-block" disabled="disabled">Sign in
+                </button>
             </form>
         </div>
     </div>

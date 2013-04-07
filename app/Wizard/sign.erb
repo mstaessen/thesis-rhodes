@@ -1,0 +1,47 @@
+<div class="row-fluid">
+    <div class="span4 no-phone">
+        <%= render :partial => 'secondary' %>
+    </div>
+
+    <div class="span8 reflow-phone">
+        <div class="margin10">
+            <div class="fluid-container">
+                <div class="navbar row-fluid">
+                    <div class="navbar-inner">
+                        <span class="brand">4. Sign &amp; Send</span>
+                    </div>
+                </div>
+
+                <form class="form">
+                    <div class="controls row-fluid">
+                        <canvas class="span12">
+                            Signature
+                        </canvas>
+                    </div>
+
+                    <div class="controls row-fluid">
+                        <textarea class="span12" placeholder="Remarks"></textarea>
+                    </div>
+
+                    <div class="controls row-fluid">
+                        <span class="span6">Status notifications via Email</span>
+
+                        <div class="btn-group span6">
+                            <button class="btn">On</button>
+                            <button class="btn">Off</button>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="pull-left">
+                            <a class="btn" href="#/create/add">Back</a>
+                        </div>
+                        <div class="pull-right">
+                            <a class="btn btn-primary" href="#/">Sign</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

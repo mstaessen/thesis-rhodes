@@ -86,4 +86,7 @@ Development Log
     the server by itself if needed) and also disable all appends of logcat to rholog.txt. Logging is way more easy if
     you use a terminal window running the command ```adb logcat | grep APP```
 
-15.
+15. If you want the title bar on the top of the android app gone, you can put ```android_title: 0``` under ```android:```
+    in ```build.yml```. You need to ```rake clean:android``` after changing that flag.
+
+16.

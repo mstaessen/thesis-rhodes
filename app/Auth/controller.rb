@@ -12,7 +12,7 @@ class AuthController < Rho::RhoController
     def do_login
         if @params['email'] and @params['password']
             Rho::AsyncHttp.post(
-                :url => "https://kulcapexpenseapp.appspot.com/resources/userService/login",
+                :url => "http://kulcapexpenseapp.appspot.com/resources/userService/login",
                 :body => "email=#{@params['email']}&password=#{@params['password']}",
                 :callback => (url_for :action => :do_login_callback)
             )
@@ -30,7 +30,7 @@ class AuthController < Rho::RhoController
             set_identity_token(@params['body'])
 
             Rho::AsyncHttp.post(
-                :url => "https://kulcapexpenseapp.appspot.com/resources/userService/getEmployee",
+                :url => "http://kulcapexpenseapp.appspot.com/resources/userService/getEmployee",
                 :body => "token=#{get_identity_token}",
                 :callback => (url_for :action => :get_employee_callback)
             )

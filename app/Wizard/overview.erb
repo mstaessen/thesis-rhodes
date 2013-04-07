@@ -1,0 +1,50 @@
+<div class="row-fluid">
+    <div class="span4 no-phone">
+        <%= render :partial => 'secondary' %>
+    </div>
+
+    <div class="span8 reflow-phone">
+        <div class="margin10">
+            <div class="fluid-container">
+                <div class="navbar row-fluid">
+                    <div class="navbar-inner">
+                        <span class="brand">2. Overview</span>
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <% @form['expenses'].each do |expense| %>
+                            <tr>
+                                <td><%= expense.date %></td>
+                                <td><%= expense.description %></td>
+                                <td>
+                                    <a class="button" href="<%= url_for :action => :expense, :query => {:id => expense['id']} %>"><i class="icon icon-edit"></i></a>
+                                </td>
+                            </tr>
+                        <% end %>
+                        </tbody>
+                    </table>
+
+                    <div class="form-actions">
+                        <div class="pull-left">
+                            <a class="btn" href="<%= url_for :action => :info %>">Back</a>
+                        </div>
+                        <div class="pull-right">
+                            <a href="<%= url_for :action => :add %>" class="btn btn-primary">Add Expense</a>
+                            <a href="<%= url_for :action => :sign %>" class="btn btn-primary">Sign &amp; Send</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

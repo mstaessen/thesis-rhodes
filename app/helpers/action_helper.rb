@@ -45,4 +45,12 @@ module ActionHelper
     def render_flashes(*flashes)
         render :partial => "partials/flashes", :locals => {:flashes => flashes + get_flashes}
     end
+
+    def get_session(namespace)
+        ::Rho.get_app.get_session(namespace)
+    end
+
+    def set_session(namespace, value)
+        ::Rho.get_app.set_session(namespace, value)
+    end
 end

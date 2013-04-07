@@ -1,0 +1,61 @@
+<div class="row-fluid">
+    <div class="span4 no-phone">
+        <%= render :partial => 'secondary' %>
+    </div>
+
+    <div class="span8 reflow-phone">
+        <div class="margin10">
+            <div class="fluid-container">
+                <div class="navbar row-fluid">
+                    <div class="navbar-inner">
+                        <span class="brand">1. Your Info</span>
+                    </div>
+                </div>
+
+                <%= render_flashes %>
+
+                <form class="form" action="<%= url_for :action => :save_info %>">
+                    <div class="controls row-fluid">
+                        <select class="span6" value="<%= @form['date']['month'] %>">
+                            <option value="1" <%= 'selected="selected"' if @form['date']['month'] == 1 %>>January</option>
+                            <option value="2" <%= 'selected="selected"' if @form['date']['month'] == 2 %>>February</option>
+                            <option value="3" <%= 'selected="selected"' if @form['date']['month'] == 3 %>>March</option>
+                            <option value="4" <%= 'selected="selected"' if @form['date']['month'] == 4 %>>April</option>
+                            <option value="5" <%= 'selected="selected"' if @form['date']['month'] == 5 %>>May</option>
+                            <option value="6" <%= 'selected="selected"' if @form['date']['month'] == 6 %>>June</option>
+                            <option value="7" <%= 'selected="selected"' if @form['date']['month'] == 7 %>>July</option>
+                            <option value="8" <%= 'selected="selected"' if @form['date']['month'] == 8 %>>August</option>
+                            <option value="9" <%= 'selected="selected"' if @form['date']['month'] == 9 %>>September</option>
+                            <option value="10" <%= 'selected="selected"' if @form['date']['month'] == 10 %>>October</option>
+                            <option value="11" <%= 'selected="selected"' if @form['date']['month'] == 11 %>>November</option>
+                            <option value="12" <%= 'selected="selected"' if @form['date']['month'] == 12 %>>December</option>
+                        </select>
+                        <input type="number" class="span6" placeholder="year" value="<%= @form['date']['year'] %>"/>
+                    </div>
+                    <div class="controls row-fluid">
+                        <input class="span12" type="text" value="<%= @form['employee']['firstName'] %>" disabled/>
+                    </div>
+                    <div class="controls row-fluid">
+                        <input class="span12" type="text" value="<%= @form['employee']['lastName'] %>" disabled/>
+                    </div>
+                    <div class="controls row-fluid">
+                        <input class="span12" type="number" value="<%= @form['employee']['employeeNumber'] %>"/>
+                    </div>
+                    <div class="controls row-fluid">
+                        <select class="span12" value="<%= @form['employee']['unitId'] %>">
+                            <% @units.each do |unit| %>
+                                <option value="<%= unit['id'] %>"><%= unit['name'] %></option>
+                            <% end %>
+                        </select>
+                    </div>
+                    <div class="controls row-fluid">
+                        <input class="span12" type="email" value="<%= @form['employee']['email'] %>"/>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary pull-right">Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
